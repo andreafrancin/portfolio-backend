@@ -30,7 +30,10 @@ SECRET_KEY = 'django-insecure-n-uf)kj*nvny@=-y!+ie&uzm*vz0gm-0_oo$vfpfd#f!7!+0dl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["portfolio-backend-1-p7og.onrender.com"]
+ALLOWED_HOSTS = [
+  "portfolio-backend-1-p7og.onrender.com",
+  "back.andreafrancin.com"
+]
 
 
 # Application definition
