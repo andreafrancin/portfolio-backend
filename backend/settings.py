@@ -32,7 +32,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
   "portfolio-backend-1-p7og.onrender.com",
-  "back.andreafrancin.com"
+  "back.andreafrancin.com",
+  "127.0.0.1"
 ]
 
 

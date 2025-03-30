@@ -1,5 +1,6 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
+import cloudinary.uploader
 
 class Project(models.Model):
     """
@@ -26,10 +27,18 @@ class Project(models.Model):
 
 class ProjectImage(models.Model):
     """
-    Model for storing multiple images related to a project.
+    Model to storage the multiple images related to a project.
     """
     project = models.ForeignKey(Project, related_name='images', on_delete=models.CASCADE)
     image = CloudinaryField('image_resources')
 
     def __str__(self):
-        return f"Image for {self.project.title_en}"
+        return f"Imagen para {self.project.title_en}"
+
+    def delete(self, *args, **kwargs):
+        """
+        Ensure that a Cloudinary image is removed when it's removed from the model instance.
+        """
+        if self.image:
+            cloudinary.uploader.destroy(self.image.public_id)
+        super().delete(*args, **kwargs)
