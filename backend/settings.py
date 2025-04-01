@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'rest_framework',
      "corsheaders",
     'projects',
+    'translations'
 ]
 
 MIDDLEWARE = [
@@ -87,6 +88,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DEV DATABASE
 """ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -94,6 +96,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
     }
 } """
 
+# PROD DATABASE
 DATABASES = {
     "default": dj_database_url.config(default=os.getenv("DATABASE_URL"))
 }

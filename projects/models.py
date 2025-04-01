@@ -12,11 +12,11 @@ class Project(models.Model):
         ('illustration', 'Illustration'),
     ]
 
-    title_en = models.CharField(max_length=255)
+    title_en = models.CharField(max_length=255, blank=True, null=True)
     title_es = models.CharField(max_length=255, blank=True, null=True)
     title_ca = models.CharField(max_length=255, blank=True, null=True)
 
-    description_en = models.TextField()
+    description_en = models.TextField(blank=True, null=True)
     description_es = models.TextField(blank=True, null=True)
     description_ca = models.TextField(blank=True, null=True)
 
